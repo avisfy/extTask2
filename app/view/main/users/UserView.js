@@ -1,5 +1,6 @@
 Ext.define('ExtTask2.view.main.users.UserView', {
     extend: 'Ext.form.FieldSet',
+
     xtype: 'user-view',
 
     requires: [

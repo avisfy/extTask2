@@ -10,7 +10,13 @@ Ext.define('ExtTask2.view.main.signIn.ViewModel', {
         nameField: null,
         surnameField: null,
         emailField: null,
-        dateBirthField:  null
+        dateBirthField:  null,
+        editModel: {
+            nameField: null,
+            surnameField: null,
+            emailField: null,
+            dateBirthField:  null
+        }
     },
 
     formulas: {

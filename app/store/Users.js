@@ -2,7 +2,7 @@ Ext.define('ExtTask2.store.Users', {
     extend: 'Ext.data.Store',
 
     alias: 'store.users',
-    storeId: 'UsersList',
+    storeId: 'usersList',
     model: 'ExtTask2.model.User',
 
     data: { items: [

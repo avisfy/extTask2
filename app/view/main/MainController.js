@@ -16,7 +16,7 @@ Ext.define('ExtTask2.view.main.MainController', {
             dateOfBirth: dateBirth,
             needDelete: false
         });
-        var s = Ext.getStore('UsersList');
+        var s = Ext.getStore('usersList');
         s.add(user);
         vm.set('nameField', null);
         vm.set('surnameField', null);
@@ -25,7 +25,7 @@ Ext.define('ExtTask2.view.main.MainController', {
     },
 
     onRemoveClicked: function () {
-        var s = Ext.getStore('UsersList');
+        var s = Ext.getStore('usersList');
         s.each(function (record) {
             if (record.get('needDelete')) {
                 s.remove(record);
@@ -34,16 +34,12 @@ Ext.define('ExtTask2.view.main.MainController', {
     },
 
     onRowRemoveClicked: function (view, recIndex, cellIndex, item, e, record) {
-        var s = Ext.getStore('UsersList');
+        var s = Ext.getStore('usersList');
         s.remove(record);
     },
 
-    onRowSelected: function (selModel, record, index, options) {
-        var s = Ext.getStore('UsersList');
-        var name = record.get('name');
-        var surname = record.get('surname');
-        var email = record.get('email');
-        var dateBirth = record.get('dateOfBirth');
+    onRowDblClicked: function (ths, record, item, index, e, eOpts ) {
+        this.getViewModel().set('actualRow', index);
         var  window = Ext.create('ExtTask2.view.main.modal.EditModal');
         window.show();
     }

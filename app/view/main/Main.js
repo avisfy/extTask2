@@ -7,14 +7,17 @@
  */
 Ext.define('ExtTask2.view.main.Main', {
     extend: 'Ext.panel.Panel',
-    xtype: 'app-main',
 
+    xtype: 'app-main',
     requires: [
         'ExtTask2.view.main.signIn.ViewModel',
         'ExtTask2.view.main.MainController',
         'ExtTask2.view.main.signIn.SignIn',
         'ExtTask2.view.main.users.UserView'
     ],
+
+    viewModel: 'signIn',
+    controller: 'main',
 
     title: 'Table task',
     bodyPadding: 12,

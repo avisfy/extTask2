@@ -1,9 +1,7 @@
 Ext.define('ExtTask2.view.main.signIn.SignIn', {
     extend: 'Ext.form.FieldSet',
-    xtype: 'sign-in',
 
-    controller: 'main',
-    viewModel: 'signIn',
+    xtype: 'sign-in',
 
     title: 'Sign in here',
     layout:  'anchor',

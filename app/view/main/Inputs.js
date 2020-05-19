@@ -1,5 +1,6 @@
 Ext.define('ExtTask2.view.main.Inputs', {
     extend: 'Ext.form.FieldContainer',
+
     xtype: 'inputs',
 
     layout: {
