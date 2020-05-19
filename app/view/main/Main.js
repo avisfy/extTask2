@@ -10,8 +10,10 @@ Ext.define('ExtTask2.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
-        'ExtTask2.view.main.SignIn',
-        'ExtTask2.view.main.UsersView'
+        'ExtTask2.view.main.signIn.ViewModel',
+        'ExtTask2.view.main.MainController',
+        'ExtTask2.view.main.signIn.SignIn',
+        'ExtTask2.view.main.users.UserView'
     ],
 
     title: 'Table task',
@@ -23,17 +25,17 @@ Ext.define('ExtTask2.view.main.Main', {
     },
     defaults: {
         padding: 30,
-        collapsible: false,
+        collapsible: false
     },
     width: 100,
 
     items: [{
         xtype: 'sign-in',
         flex: 1,
-        margin: '0 5 0 0',
+        margin: '0 5 0 0'
     }, {
-        xtype: 'users-view',
+        xtype: 'user-view',
         flex: 2,
-        margin: '0 0 0 5',
+        margin: '0 0 0 5'
     }]
 });

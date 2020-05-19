@@ -1,23 +1,21 @@
-Ext.define('ExtTask2.view.main.UserTable', {
+Ext.define('ExtTask2.view.main.users.Grid', {
     extend: 'Ext.grid.Panel',
-    xtype: 'user-table',
+    xtype: 'user-grid',
 
     requires: [
-        'ExtTask2.store.Users',
-        'ExtTask2.view.main.MainController'
+        'ExtTask2.store.Users'
     ],
 
     controller: 'main',
+    id: 'MyGridPanel',
 
     store: {
         type: 'users'
     },
 
-    plugins: [{
-        ptype: 'rowediting',
-        clicksToMoveEditor: 1,
-        autoCancel: false
-    }],
+    listeners: {
+        select: 'onRowSelected'
+    },
 
     tbar: [{
         text: 'Remove selected rows',
@@ -30,37 +28,21 @@ Ext.define('ExtTask2.view.main.UserTable', {
         {
             header: 'Name',
             dataIndex: 'name',
-            flex: 1,
-            editor: {
-                allowBlank: false
-            }
+            flex: 1
         }, {
             header: 'Surname',
             dataIndex: 'surname',
-            flex: 1,
-            editor: {
-                allowBlank: false
-            }
+            flex: 1
         }, {
             header: 'Email',
             dataIndex: 'email',
-            flex: 2,
-            editor: {
-                allowBlank: false,
-                vtype: 'email',
-            }
+            flex: 2
         }, {
-            header: 'Date of birth',
+            text: 'Date of birth',
             xtype: 'datecolumn',
             dataIndex: 'dateOfBirth',
             formatter: 'date("d.m.Y")',
-            width: 115,
-            editor: {
-                xtype: 'datefield',
-                allowBlank: false,
-                maxValue: new Date(),
-                formatter: 'date("d.m.Y")'
-            }
+            width: 115
         }, {
             xtype: 'checkcolumn',
             header: 'Delete',
@@ -73,7 +55,7 @@ Ext.define('ExtTask2.view.main.UserTable', {
             menuDisabled: true,
             items: [{
                 iconCls: 'cell-editing-delete-row',
-                handler: 'onRowRemoveClicked',
+                handler: 'onRowRemoveClicked'
                 //html: '<img src="https://s1.iconbird.com/ico/2013/10/464/w512h5121380984608delete.png">'
             }]
         }]

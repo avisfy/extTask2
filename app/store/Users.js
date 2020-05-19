@@ -3,7 +3,7 @@ Ext.define('ExtTask2.store.Users', {
 
     alias: 'store.users',
     storeId: 'UsersList',
-    model: 'User',
+    model: 'ExtTask2.model.User',
 
     data: { items: [
         { name: 'Name', surname: 'Surname', email: 'namesurname@email.ru', dateOfBirth: new Date(Date.parse('2002-02-20')), needDelete: false },

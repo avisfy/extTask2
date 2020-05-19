@@ -1,16 +1,16 @@
 /**
  * This class is the view model for the Main view of the application.
  */
-Ext.define('ExtTask2.view.main.SignInModel', {
+Ext.define('ExtTask2.view.main.signIn.ViewModel', {
     extend: 'Ext.app.ViewModel',
 
     alias: 'viewmodel.signIn',
 
     data: {
-        nameField: '',
-        surnameField: '',
-        emailField: '',
-        dateBirthField: ''
+        nameField: null,
+        surnameField: null,
+        emailField: null,
+        dateBirthField:  null
     },
 
     formulas: {
