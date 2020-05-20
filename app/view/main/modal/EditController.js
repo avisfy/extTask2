@@ -31,17 +31,32 @@ Ext.define('ExtTask2.view.main.modal.EditController', {
         var oldEmail =  user.get('email');
         var oldDateBirth =  user.get('dateOfBirth');
 
-        if (!((oldName === name) && (oldSurname === surname) && (oldEmail === email) && oldDateBirth === dateBirth)) {
-            var user = Ext.create('ExtTask2.model.User', {
-                name: name,
-                surname: surname,
-                email: email,
-                dateOfBirth: dateBirth,
-                needDelete: false
-            });
-            store.removeAt(index);
-            store.insert(index, user);
+        if (!(oldName === name)) {
+            user.set('name', name);
         }
+        if (!(oldSurname === surname)) {
+            user.set('surname', surame);
+        }
+
+        if (!(oldEmail === email)) {
+            user.set('email', email);
+        }
+        if  (!(oldDateBirth === dateBirth)) {
+            user.set('dateOfBirth', dateBirth);
+        }
+
+        /*if (!((oldName === name) && (oldSurname === surname) && (oldEmail === email) && oldDateBirth === dateBirth)) {
+           var user = Ext.create('ExtTask2.model.User', {
+               name: name,
+               surname: surname,
+               email: email,
+               dateOfBirth: dateBirth,
+               needDelete: false
+           });
+           store.removeAt(index);
+           store.insert(index, user);
+       }*/
+
         this.getView().close();
     }
 
