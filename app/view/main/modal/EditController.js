@@ -35,7 +35,7 @@ Ext.define('ExtTask2.view.main.modal.EditController', {
             user.set('name', name);
         }
         if (!(oldSurname === surname)) {
-            user.set('surname', surame);
+            user.set('surname', surname);
         }
 
         if (!(oldEmail === email)) {

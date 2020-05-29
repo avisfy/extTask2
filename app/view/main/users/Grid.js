@@ -13,12 +13,13 @@ Ext.define('ExtTask2.view.main.users.Grid', {
         type: 'users'
     },
 
-    tbar: [{
-        text: 'Remove selected rows',
-        listeners: {
-            click: 'onRemoveClicked'
-        }
-    }],
+    tbar: [
+        {
+            text: 'Remove selected rows',
+            listeners: {
+                click: 'onRemoveClicked'
+            }
+        }],
 
     columns: [
         {
@@ -55,8 +56,10 @@ Ext.define('ExtTask2.view.main.users.Grid', {
             }]
         }],
 
-    listeners: {
+    listeners: [{
         itemdblclick: 'onRowDblClicked'
-    },
+    },  {
+        afterrender: 'afterGridReady'
+    }]
 
 });

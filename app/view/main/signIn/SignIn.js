@@ -18,5 +18,11 @@ Ext.define('ExtTask2.view.main.signIn.SignIn', {
         listeners: {
             click: 'onAddClicked'
         }
+    } , {
+        xtype: 'button',
+        text: 'Get from servlet!',
+        listeners: {
+            click: 'onGetClicked'
+        }
     }]
 })
