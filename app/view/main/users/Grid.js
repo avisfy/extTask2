@@ -58,8 +58,8 @@ Ext.define('ExtTask2.view.main.users.Grid', {
 
     listeners: [{
         itemdblclick: 'onRowDblClicked'
-    },  {
-        afterrender: 'afterGridReady'
+    //},  {
+        //afterrender: 'afterGridReady'
     }]
 
 });

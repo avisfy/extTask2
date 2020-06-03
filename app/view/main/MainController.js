@@ -26,7 +26,6 @@ Ext.define('ExtTask2.view.main.MainController', {
     },
 
     saveUser: function (vm) {
-        debugger
         var name = vm.get('nameField');
         var surname = vm.get('surnameField');
         var email = vm.get('emailField');
@@ -35,20 +34,17 @@ Ext.define('ExtTask2.view.main.MainController', {
             name: name,
             surname: surname,
             email: email,
-            dateBirth: dateBirth
+            birth: dateBirth
         };
         Ext.Ajax.request({
-            url: 'http://localhost:8080/save_grid',
+            url: 'http://localhost:8080/save_user',
             method: 'POST',
+            jsonData: JSON.stringify(user),
             success: function (response, opts) {
                 console.log('Saved');
             },
             failure: function (response, opts) {
                 console.log('Failed saving');
-            },
-            params: {
-                action: "add_user",
-                user: user
             }
 
         })
@@ -58,13 +54,14 @@ Ext.define('ExtTask2.view.main.MainController', {
         var vm = this.getViewModel();
         Ext.Ajax.request({
             url: 'http://localhost:8080/gen_user',
+            method: 'GET',
             success: function (response, opts) {
                 var obj = Ext.decode(response.responseText);
                 console.dir(obj);
                 vm.set('nameField', obj.name);
                 vm.set('surnameField', obj.surname);
                 vm.set('emailField', obj.email);
-                vm.set('dateBirthField', new Date(Date.parse(obj.date)));
+                vm.set('dateBirthField', new Date(Date.parse(obj.birth)));
             },
             failure: function (response, opts) {
                 console.log('server-side failure with status code ' + response.status);
